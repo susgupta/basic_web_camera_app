@@ -16,10 +16,10 @@ const cameraTrigger = document.querySelector("#camera--trigger");
 function cameraStart() {
   //the getUserMedia method to access the camera
   navigator.mediaDevices
-    .getUserMedia()
+    .getUserMedia(constraints)
     .then(function(stream) {
       track = stream.getTracks()[0];
-      cameraView.srcObject = stream;
+      cameraView.srcObject = track;
     })
     .catch(function(error) {});
 }
