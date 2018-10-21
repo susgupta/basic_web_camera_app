@@ -1,8 +1,6 @@
 // want to default to the camera facing the user
 var constraints = {
-  video: {
-    facingMode: "user"
-  },
+  video: true,
   audio: false
 };
 
