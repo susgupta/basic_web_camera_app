@@ -4,6 +4,8 @@ var constraints = {
   audio: false
 };
 
+var track = null;
+
 //get the html elements that we need
 const cameraView = document.querySelector("#camera--view");
 const cameraOutput = document.querySelector("#camera--output");
@@ -19,7 +21,9 @@ function cameraStart() {
       track = stream.getTracks()[0];
       cameraView.srcObject = track;
     })
-    .catch(function(error) {});
+    .catch(function(error) {
+      console.error("Oops. Something is horribly broken.", error);
+    });
 }
 
 //add take a picture button click function
